@@ -253,7 +253,7 @@ int mdhim_leveldb_open(void **dbh, void **dbs, char *path, int flags, int key_ty
 	//Set the output handle
 	*((struct mdhim_leveldb_t **) dbh) = mdhimdb;
 	if (err != NULL) {
-		mlog(MDHIM_SERVER_CRIT, "Error opening leveldb database");
+		mlog(MDHIM_SERVER_CRIT, "Error opening leveldb database - %s", err);
 		return MDHIM_DB_ERROR;
 	}
 
